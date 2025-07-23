@@ -1,90 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Progate</title>
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hideyoshi Noda - ポートフォリオ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="header-left">
-        <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
-      </div>
-      <span class="fa fa-bars menu-icon"></span>
-      <div class="header-right">
-        <a href="#">レッスン</a>
-        <a href="#">新規登録</a>
-        <a href="#" class="login">ログイン</a>
-      </div>
+<body class="font-sans leading-normal tracking-normal">
+
+  <!-- Hero / 自己紹介 -->
+  <section id="about" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6">
+    <h1 class="text-7xl sm:text-7xl lg:text-9xl font-bold mb-4">Hideyoshi Noda</h1>
+    <p class="text-2xl">ポートフォリオサイトです。是非ご覧ください。</p>
+  </section>
+
+  <!-- スキルセクション -->
+  <section id="skills" class="py-16 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-8 text-gray-800">スキル一覧</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div class="bg-white shadow rounded-lg p-4">HTML</div>
+      <div class="bg-white shadow rounded-lg p-4">CSS</div>
+      <div class="bg-white shadow rounded-lg p-4">Ruby on Rails</div>
+      <div class="bg-white shadow rounded-lg p-4">MySQL</div>
+      <!-- 必要に応じて追加 -->
     </div>
-  </header>
-  <div class="top-wrapper">
-    <div class="container">
-      <h1>LEARN TO CODE.<br>LEARN TO BE CREATIVE.</h1>
-      <p>Progateはオンラインプログラミング学習サービスです。<br>初心者にもやさしいスライドとレッスンで、ウェブサービスを作りながらプログラミングを学んでいきましょう。</p>
-      <div class="btn-wrapper">
-        <a href="#" class="btn signup">新規登録はこちら</a>
-        <p>or</p>
-        <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Facebookで登録</a>
-        <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Twitterで登録</a>
+  </section>
+
+  <!-- プロジェクト履歴 -->
+  <section id="projects" class="py-16 bg-slate-900 text-white text-center">
+    <h2 class="text-3xl font-bold mb-8">プロジェクト</h2>
+    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+        <p class="text-sm text-gray-300">〇〇アプリの開発。Rails + MySQL + Tailwind CSS 使用。</p>
       </div>
-    </div>
-  </div>
-  <div class="lesson-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>Learn Where to Get Started!</h2>
+      <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+        <p class="text-sm text-gray-300">個人ブログ作成、SEO最適化。</p>
       </div>
-      <div class="lessons">
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/html.png">
-            <p>HTML & CSS</p>
-          </div>
-          <p class="text-contents">ウェブページの作成に使用される言語です。HTMLとCSSを組み合わせることで、静的なページを作り上げることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
-            <p>jQuery</p>
-          </div>
-          <p class="text-contents">素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/ruby.png">
-            <p>Ruby</p>
-          </div>
-          <p class="text-contents">オープンソースの動的なプログラミング言語で、 シンプルさと高い生産性を備えています。大きなWebアプリケーションから小さな日用ツールまで、さまざまなソフトウェアを作ることができます。</p>
-        </div>
-        <div class="lesson">
-          <div class="lesson-icon">
-            <img src="https://prog-8.com/images/html/advanced/php.png">
-            <p>PHP</p>
-          </div>
-          <p class="text-contents">HTMLだけではページの内容を変えることはできません。PHPはHTMLにプログラムを埋め込み、それを可能にします。</p>
-        </div>
-      </div>
-      <div class="clear"></div>
+      <!-- 必要に応じて追加 -->
     </div>
-  </div>
-  <div class="message-wrapper">
-    <div class="container">
-      <div class="heading">
-        <h2>さぁ、あなたもProgateでプログラミングを学んでみませんか?</h2>
-        <h3>Let's learn to code, learn to be creative!</h3>
-      </div>
-      <span class="btn message">さっそく開発する</span>
-    </div>
-  </div>
-  <footer>
-    <div class="container">
-      <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
-      <p>Learn to Code, Learn to be Creative.</p>
-    </div>
-  </footer>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact" class="py-16 bg-gradient-to-r from-teal-400 via-blue-500 to-indigo-600 text-white text-center">
+    <h2 class="text-3xl font-bold mb-8">お問い合わせ</h2>
+    <p>ご連絡は <a href="mailto:you@example.com" class="underline">you@example.com</a> まで</p>
+  </section>
+
 </body>
 </html>
