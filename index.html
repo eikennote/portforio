@@ -15,9 +15,9 @@
 
       <!-- ナビゲーションメニュー -->
       <nav class="space-x-6 text-sm sm:text-base font-medium text-gray-700">
-        <a href="#about" class="hover:text-indigo-600">トップ</a>
-        <a href="#skills" class="hover:text-indigo-600">スキル</a>
-        <a href="#projects" class="hover:text-indigo-600">ポートフォリオ</a>
+        <a href="#about" class="hover:text-indigo-600">Top</a>
+        <a href="#skills" class="hover:text-indigo-600">Skills</a>
+        <a href="#projects" class="hover:text-indigo-600">Works</a>
         <a href="#contact" class="hover:text-indigo-600">連絡先</a>
       </nav>
     </div>
@@ -90,9 +90,40 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
+        <h3 class="text-xl font-semibold mb-2"> todo app </h3>
+        <p class="text-sm text-gray-300">todoアプリの開発。Rails + MySQL + Tailwind CSS 使用。</p>
+        <button onclick="openModal()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+          詳細
+        </button>
+
+        <!-- モーダル背景と本体 -->
+        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+          <div class="bg-white w-full max-w-4xl p-6 rounded-lg shadow-lg relative flex flex-col md:flex-row">
+            <!-- 左側テキスト -->
+            <div class="flex-1">
+              <h2 class="text-xl font-bold mb-2">todo app構築</h2>
+              <p class="mb-4 text-sm text-gray-700">
+                AWS上にtodoアプリを構築してみました
+              </p>
+              <hr class="my-4" />
+              <p class="text-sm text-gray-500">使用技術: AWS EC2/RDS/Route53/ACM/ELB, Ruby, RubyonRails, Postgresql</p>
+            </div>
+
+            <!-- 右側イメージ -->
+            <div class="flex-1 p-4">
+              <img src="top.png" alt="top.png" class="rounded-md" />
+            </div>
+
+            <!-- 閉じるボタン -->
+            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold">
+              &times;
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-semibold mb-2"> todo app </h3>
         <p class="text-sm text-gray-300">todoアプリの開発。Rails + MySQL + Tailwind CSS 使用。</p>
@@ -127,40 +158,8 @@
       </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-      <div class="bg-slate-800 p-6 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-2"> todo app </h3>
-        <p class="text-sm text-gray-300">todoアプリの開発。Rails + MySQL + Tailwind CSS 使用。</p>
-        <button onclick="openModal()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
-          詳細
-        </button>
 
-        <!-- モーダル背景と本体 -->
-        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-          <div class="bg-white w-full max-w-4xl p-6 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-            <!-- 左側テキスト -->
-            <div class="flex-1">
-              <h2 class="text-xl font-bold mb-2">todo app構築</h2>
-              <p class="mb-4 text-sm text-gray-700">
-                AWS上にtodoアプリを構築してみました
-              </p>
-              <hr class="my-4" />
-              <p class="text-sm text-gray-500">使用技術: AWS EC2/RDS/Route53/ACM/ELB, Ruby, RubyonRails, Postgresql</p>
-            </div>
 
-            <!-- 右側イメージ -->
-            <div class="flex-1 p-4">
-              <img src="top.png" alt="top.png" class="rounded-md" />
-            </div>
-
-            <!-- 閉じるボタン -->
-            <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold">
-              &times;
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
     
   </section>
@@ -171,14 +170,7 @@
     <p>ご連絡は <a href="mailto:you@example.com" class="underline">you@example.com</a> まで</p>
   </section>
 
-  <!-- モーダル制御用JavaScript -->
-  <script>
-    function openModal() {
-      document.getElementById('modal').classList.remove('hidden');
-    }
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-    }
+  
   </script>
   <!-- モーダル本体 -->
   <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
@@ -205,6 +197,7 @@
       </button>
     </div>
   </div>
+  <!-- モーダル制御用JavaScript -->
   <script>
   function openModal() {
     document.getElementById('modal').classList.remove('hidden');
