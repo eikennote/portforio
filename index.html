@@ -1,161 +1,182 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ポートフォリオ</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans leading-normal tracking-normal">
-  <!-- ナビゲーションヘッダー -->
-  <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- ロゴやサイト名 -->
-      <div class="text-xl font-bold text-gray-800">portforio</div>
 
-      <!-- ナビゲーションメニュー -->
-      <nav class="space-x-6 text-sm sm:text-base font-medium text-gray-700">
-        <a href="#about" class="hover:text-indigo-600">Top</a>
-        <a href="#skills" class="hover:text-indigo-600">Skills</a>
-        <a href="#projects" class="hover:text-indigo-600">Works</a>
-        <a href="#contact" class="hover:text-indigo-600">連絡先</a>
-      </nav>
-    </div>
-  </header>
+<!-- ========== ナビ ========== -->
+<header class="fixed top-0 left-0 w-full bg-white shadow z-40">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="text-xl font-bold text-gray-800">portforio</div>
+    <nav class="space-x-6 text-sm sm:text-base font-medium text-gray-700">
+      <a href="#about" class="hover:text-indigo-600">Top</a>
+      <a href="#skills" class="hover:text-indigo-600">Skills</a>
+      <a href="#projects" class="hover:text-indigo-600">Works</a>
+      <a href="#contact" class="hover:text-indigo-600">連絡先</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Hero / 自己紹介 -->
-  <section id="about" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-800 px-6">
-    <h1 class="text-7xl sm:text-7xl lg:text-9xl font-bold mb-4">portforio</h1>
-    <p class="text-2xl">ポートフォリオサイトです。是非ご覧ください。</p>
-  </section>
+<!-- ========== Hero ========== -->
+<section id="about" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-800 px-6">
+  <h1 class="text-7xl font-bold mb-4">portforio</h1>
+  <p class="text-2xl">ポートフォリオサイトです。是非ご覧ください。</p>
+</section>
 
+<!-- ========== Skills ========== -->
+<section id="skills" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-gray-50 text-gray-800">
+  <h2 class="text-3xl font-bold mb-8">スキル一覧</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+    <div class="bg-white shadow rounded-lg p-4">HTML</div>
+    <div class="bg-white shadow rounded-lg p-4">CSS</div>
+    <div class="bg-white shadow rounded-lg p-4">Ruby on Rails</div>
+    <div class="bg-white shadow rounded-lg p-4">MySQL</div>
+  </div>
+</section>
 
-  
-  <!-- スキルセクション -->
-  <section id="skills" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-gray-50 text-gray-800">
-    <h2 class="text-3xl font-bold mb-8 text-gray-800">スキル一覧</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-      <div class="bg-white shadow rounded-lg p-4">HTML</div>
-      <div class="bg-white shadow rounded-lg p-4">CSS</div>
-      <div class="bg-white shadow rounded-lg p-4">Ruby on Rails</div>
-      <div class="bg-white shadow rounded-lg p-4">MySQL</div>
-    </div>
-  </section>
-
-
-  
-  <!-- 成果物履歴 -->
-  <section id="projects" class="h-screen pt-20 flex flex-col items-center text-center bg-slate-900 text-white">
+<!-- ========== Works ========== -->
+<section id="projects" class="min-h-screen pt-20 flex flex-col items-center text-center bg-slate-900 text-white">
   <h2 class="text-3xl font-bold mb-8">Works</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 max-w-6xl mx-auto px-4">
+
     <!-- カード1 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="prometheus.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal1')">
+      <img src="prometheus.png" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
       <h3 class="text-xl font-semibold">監視環境構築</h3>
-      <p class="text-sm text-gray-300">Prometheus + Gragana + AlertManager</p>
-    </div>
-    
-    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">text.............</p>
-        <img src="todoapp.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">
-        &times;
-        </button>
-      </div>
+      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
     </div>
 
     <!-- カード2 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="samba.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">Sambaファイル共有環境構成</h3>
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal2')">
+      <img src="samba.png" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold">Sambaファイル共有</h3>
       <p class="text-sm text-gray-300">OpenVPN + Samba</p>
     </div>
 
     <!-- カード3 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="spam_phonebook.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal3')">
+      <img src="spam_phonebook.png" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
       <h3 class="text-xl font-semibold">迷惑電話番号収集アプリ</h3>
-      <p class="text-sm text-gray-300">Rails + PosrgreSQL</p>
+      <p class="text-sm text-gray-300">Rails + PostgreSQL</p>
     </div>
 
     <!-- カード4 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="server_1.jpg" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal4')">
+      <img src="server_1.jpg" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
       <h3 class="text-xl font-semibold">サーバー・ネットワーク</h3>
       <p class="text-sm text-gray-300">各種セットアップ</p>
     </div>
 
     <!-- カード5 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="top.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">title</h3>
-      <p class="text-sm text-gray-300">text</p>
-    </div>
-    
-    <!-- カード6 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal()">
-      <img src="top.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">title</h3>
-      <p class="text-sm text-gray-300">text</p>
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal5')">
+      <img src="top.png" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold">タイトル5</h3>
+      <p class="text-sm text-gray-300">テキスト</p>
     </div>
 
+    <!-- カード6 -->
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+         onclick="openModal('modal6')">
+      <img src="top.png" alt="" class="rounded-md mb-4 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold">タイトル6</h3>
+      <p class="text-sm text-gray-300">テキスト</p>
+    </div>
   </div>
 </section>
 
-  
+<!-- ========== Contact ========== -->
+<section id="contact" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-indigo-600 text-white">
+  <h2 class="text-3xl font-bold mb-8">お問い合わせ</h2>
+  <p>ご連絡は <a href="mailto:you@example.com" class="underline">you@example.com</a> まで</p>
+</section>
 
-
-
-
-
-    
-  </section>
-
-  <!-- お問い合わせ -->
-  <section id="contact" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-indigo-600 text-white">
-    <h2 class="text-3xl font-bold mb-8">お問い合わせ</h2>
-    <p>ご連絡は <a href="mailto:you@example.com" class="underline">you@example.com</a> まで</p>
-  </section>
-
-  
-  </script>
-  <!-- モーダル本体 -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-      
-      <!-- テキスト -->
-      <div class="flex-1">
-        <h2 class="text-xl font-bold mb-2">Todoアプリ開発</h2>
-        <p class="mb-4 text-sm text-gray-700">
-          Ruby on Railsを使ってToDoアプリを作成しました。学習目的で作成し、ユーザー登録、タスク追加・編集・削除などの機能を実装しています。
-        </p>
-        <hr class="my-4" />
-        <p class="text-sm text-gray-500">使用技術: Rails / MySQL / Tailwind CSS / GitHub Actions</p>
-      </div>
-  
-      <!-- イメージ -->
-      <div class="flex-1 p-4">
-        <img src="top.png" alt="アプリ画面のスクリーンショット" class="rounded-md" />
-      </div>
-  
-      <!-- 閉じるボタン -->
-      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold">
-        &times;
-      </button>
-    </div>
+<!-- ========== 各モーダル ========== -->
+<!-- すべて最初は hidden にするのが重要 -->
+<div id="modal1" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
+    <p class="mb-4">詳細説明……</p>
+    <button onclick="closeModal('modal1')" class="close-btn">&times;</button>
   </div>
-  <!-- モーダル制御用JavaScript -->
-  <script>
-  function openModal() {
-    document.getElementById('modal').classList.remove('hidden');
+</div>
+
+<div id="modal2" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">Sambaファイル共有</h2>
+    <p>詳細説明……</p>
+    <button onclick="closeModal('modal2')" class="close-btn">&times;</button>
+  </div>
+</div>
+
+<div id="modal3" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">迷惑電話番号収集アプリ</h2>
+    <p>詳細説明……</p>
+    <button onclick="closeModal('modal3')" class="close-btn">&times;</button>
+  </div>
+</div>
+
+<div id="modal4" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">サーバー・ネットワーク</h2>
+    <p>詳細説明……</p>
+    <button onclick="closeModal('modal4')" class="close-btn">&times;</button>
+  </div>
+</div>
+
+<div id="modal5" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">タイトル5</h2>
+    <p>詳細説明……</p>
+    <button onclick="closeModal('modal5')" class="close-btn">&times;</button>
+  </div>
+</div>
+
+<div id="modal6" class="modal hidden">
+  <div class="modal-content">
+    <h2 class="text-2xl font-bold mb-4">タイトル6</h2>
+    <p>詳細説明……</p>
+    <button onclick="closeModal('modal6')" class="close-btn">&times;</button>
+  </div>
+</div>
+
+<!-- ========== 共通スタイル & スクリプト ========== -->
+<style>
+  .modal {
+    @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
   }
-  function closeModal() {
-    document.getElementById('modal').classList.add('hidden');
+  .modal-content {
+    @apply bg-white text-gray-800 w-full max-w-3xl p-8 rounded-lg relative;
   }
-  </script>
+  .close-btn {
+    @apply absolute top-2 right-4 text-gray-500 hover:text-red-500 text-3xl;
+  }
+</style>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+  }
+  // 背景クリックでも閉じる
+  document.querySelectorAll('.modal').forEach(m => {
+    m.addEventListener('click', e => {
+      if (e.target === m) m.classList.add('hidden');
+    });
+  });
+</script>
+
 </body>
-  
 </html>
