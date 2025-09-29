@@ -102,7 +102,6 @@
 
   </section>
 
-  <!-- モーダル群（グリッド外に出す） -->
   <!-- 例：modal1 -->
   <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
        onclick="closeModal('modal1')">
@@ -143,8 +142,7 @@
       </div>
 
       <!-- 閉じる -->
-      <button onclick="closeModal('modal1')" aria-label="閉じる"
-              class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+      <button onclick="closeModal('modal1')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
     </div>
   </div>
 
@@ -172,8 +170,7 @@
           <div class="swiper-pagination mt-3"></div>
         </div>
       </div>
-      <button onclick="closeModal('modal2')" aria-label="閉じる"
-              class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+      <button onclick="closeModal('modal2')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
     </div>
   </div>
 
@@ -201,8 +198,80 @@
     </div>
   </div>
 
-  <!-- modal4, modal5, modal6 も同様に追加可能 -->
-  <!-- （必要ならここに modal4/modal5/modal6 を追加） -->
+  <!-- modal4 -->
+  <div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal4')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ</h2>
+        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
+      </div>
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center"><img src="spam1.png" class="w-full h-64 object-contain rounded-md" /></div>
+            <div class="swiper-slide flex items-center justify-center"><img src="spam2.png" class="w-full h-64 object-contain rounded-md" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+      <button onclick="closeModal('modal4')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- modal5 -->
+  <div id="modal5" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal5')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ</h2>
+        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
+      </div>
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center"><img src="spam1.png" class="w-full h-64 object-contain rounded-md" /></div>
+            <div class="swiper-slide flex items-center justify-center"><img src="spam2.png" class="w-full h-64 object-contain rounded-md" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+      <button onclick="closeModal('modal5')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- modal6 -->
+  <div id="modal6" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal6')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ</h2>
+        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
+      </div>
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center"><img src="spam1.png" class="w-full h-64 object-contain rounded-md" /></div>
+            <div class="swiper-slide flex items-center justify-center"><img src="spam2.png" class="w-full h-64 object-contain rounded-md" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+      <button onclick="closeModal('modal6')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+
+
 
   <!-- Contact -->
   <section id="contact" class="min-h-screen pt-20 flex flex-col justify-center items-center text-center bg-indigo-600 text-white">
