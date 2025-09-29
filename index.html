@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ポートフォリオ</title>
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
-<body class="font-sans leading-normal tracking-normal">
-  <!-- ナビゲーションヘッダー -->
+<body class="font-sans leading-normal tracking-normal bg-gray-50">
+
+  <!-- ナビ -->
   <header class="fixed top-0 left-0 w-full bg-white shadow z-50">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- ロゴやサイト名 -->
       <div class="text-xl font-bold text-gray-800">portforio</div>
-
-      <!-- ナビゲーションメニュー -->
       <nav class="space-x-6 text-sm sm:text-base font-medium text-gray-700">
         <a href="#about" class="hover:text-indigo-600">Top</a>
         <a href="#skills" class="hover:text-indigo-600">Skills</a>
@@ -23,18 +26,16 @@
     </div>
   </header>
 
-  <!-- Hero / 自己紹介 -->
-  <section id="about" class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-800 px-6">
-    <h1 class="text-7xl sm:text-7xl lg:text-9xl font-bold mb-4">portforio</h1>
+  <!-- Hero -->
+  <section id="about" class="min-h-screen pt-20 flex flex-col justify-center items-center text-center bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400 text-gray-800 px-6">
+    <h1 class="text-6xl sm:text-7xl lg:text-9xl font-bold mb-4">portforio</h1>
     <p class="text-2xl">ポートフォリオサイトです。是非ご覧ください。</p>
   </section>
 
-
-  
-  <!-- スキルセクション -->
-  <section id="skills" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-gray-50 text-gray-800">
+  <!-- Skills -->
+  <section id="skills" class="min-h-screen pt-20 flex flex-col justify-center items-center text-center bg-white text-gray-800">
     <h2 class="text-3xl font-bold mb-8 text-gray-800">スキル一覧</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-4">
       <div class="bg-white shadow rounded-lg p-4">HTML</div>
       <div class="bg-white shadow rounded-lg p-4">CSS</div>
       <div class="bg-white shadow rounded-lg p-4">Ruby on Rails</div>
@@ -42,208 +43,214 @@
     </div>
   </section>
 
+  <!-- Works -->
+  <section id="projects" class="min-h-screen pt-20 pb-12 flex flex-col items-center text-center bg-slate-900 text-white">
+    <h2 class="text-3xl font-bold mb-8">Works</h2>
 
-  
-  <!-- 成果物履歴 -->
-  <section id="projects" class="h-screen pt-20 flex flex-col items-center text-center bg-slate-900 text-white">
-  <h2 class="text-3xl font-bold mb-8">Works</h2>
+    <!-- カードのグリッド（ここにカードだけ） -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 max-w-6xl mx-auto px-4">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 max-w-6xl mx-auto px-4">
-
-    <!-- ===== カード1 ===== -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal1')">
-      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">監視環境構築</h3>
-      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
-    </div>
-    <!-- モーダル1 -->
-    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-        <!-- 左テキスト -->
-        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
-          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
-          <p class="text-gray-700 leading-relaxed">
-            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
-          </p>
-        </div>
-        <!-- 右スライダー -->
-        <div class="md:w-1/2">
-          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
-            </div>
-            <div class="swiper-button-next text-gray-600"></div>
-            <div class="swiper-button-prev text-gray-600"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <button onclick="closeModal('modal1')"
-          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <!-- カード1 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal1')">
+        <img src="prometheus.png" alt="監視環境" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">監視環境構築</h3>
+        <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
       </div>
-    </div>
 
-    
-    <!-- ===== カード2 ===== -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal2')">
-      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">監視環境構築</h3>
-      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
-    </div>
-    <!-- モーダル2 -->
-    <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-        <!-- 左テキスト -->
-        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
-          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
-          <p class="text-gray-700 leading-relaxed">
-            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
-          </p>
-        </div>
-        <!-- 右スライダー -->
-        <div class="md:w-1/2">
-          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
-            </div>
-            <div class="swiper-button-next text-gray-600"></div>
-            <div class="swiper-button-prev text-gray-600"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <button onclick="closeModal('modal2')"
-          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <!-- カード2 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal2')">
+        <img src="samba.png" alt="Samba" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">Sambaファイル共有環境構成</h3>
+        <p class="text-sm text-gray-300">OpenVPN + Samba</p>
       </div>
-    </div>
 
-    
-    <!-- ===== カード3 ===== -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal3')">
-      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">監視環境構築</h3>
-      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
-    </div>
-    <!-- モーダル3 -->
-    <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-        <!-- 左テキスト -->
-        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
-          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
-          <p class="text-gray-700 leading-relaxed">
-            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
-          </p>
-        </div>
-        <!-- 右スライダー -->
-        <div class="md:w-1/2">
-          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
-              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
-            </div>
-            <div class="swiper-button-next text-gray-600"></div>
-            <div class="swiper-button-prev text-gray-600"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-        <button onclick="closeModal('modal3')"
-          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <!-- カード3 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal3')">
+        <img src="spam_phonebook.png" alt="迷惑電話" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">迷惑電話番号収集アプリ</h3>
+        <p class="text-sm text-gray-300">Rails + PostgreSQL</p>
       </div>
-    </div>
 
-    
-    <!-- カード4 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal4')">
-      <img src="server_1.jpg" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">サーバー・ネットワーク</h3>
-      <p class="text-sm text-gray-300">各種セットアップ</p>
-    </div>
-
-    <div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">ここに詳細テキスト</p>
-        <img src="server_1.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <!-- カード4 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal4')">
+        <img src="server_1.jpg" alt="サーバ" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">サーバー・ネットワーク</h3>
+        <p class="text-sm text-gray-300">各種セットアップ</p>
       </div>
-    </div>
-    
-    
-    <!-- カード5 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal5')">
-      <img src="top.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">title</h3>
-      <p class="text-sm text-gray-300">text</p>
-    </div>
-    
-    <div id="modal5" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">ここに詳細テキスト</p>
-        <img src="prometheus.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+
+      <!-- カード5 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal5')">
+        <img src="top.png" alt="title" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">title</h3>
+        <p class="text-sm text-gray-300">text</p>
       </div>
-    </div>
 
-    
-    <!-- カード6 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal6')">
-      <img src="top.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">title</h3>
-      <p class="text-sm text-gray-300">text</p>
-    </div>
-    
-    <div id="modal6" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">ここに詳細テキスト</p>
-        <img src="prometheus.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <!-- カード6 -->
+      <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90"
+           onclick="openModal('modal6')">
+        <img src="top.png" alt="title" class="rounded-md mb-4 w-full h-48 object-cover" />
+        <h3 class="text-xl font-semibold">title</h3>
+        <p class="text-sm text-gray-300">text</p>
       </div>
-    </div>
 
-  </div>
-</section>
+    </div> <!-- grid end -->
 
-  
-
-
-
-
-
-    
   </section>
 
-  <!-- お問い合わせ -->
-  <section id="contact" class="h-screen pt-20 flex flex-col justify-center items-center text-center bg-indigo-600 text-white">
+  <!-- モーダル群（グリッド外に出す） -->
+  <!-- 例：modal1 -->
+  <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal1')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <!-- 左：テキスト（余白大きめ） -->
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">監視環境構築</h2>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Prometheus + Grafana + AlertManager を使った監視環境の構成です。ここに詳細説明を書きます。必要ならセットアップ手順やポイントを列挙してください。
+        </p>
+        <ul class="text-sm text-gray-600 list-disc pl-5">
+          <li>メトリクス収集：node_exporter 等</li>
+          <li>可視化：Grafana ダッシュボード</li>
+          <li>アラート：Alertmanager → Slack 連携</li>
+        </ul>
+      </div>
+
+      <!-- 右：画像スライダー（枠あり） -->
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center">
+              <img src="image1.png" alt="構成図1" class="w-full h-64 object-contain rounded-md" />
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+              <img src="image2.png" alt="構成図2" class="w-full h-64 object-contain rounded-md" />
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+              <img src="image3.png" alt="構成図3" class="w-full h-64 object-contain rounded-md" />
+            </div>
+          </div>
+          <!-- ナビ・ページネーション -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+
+      <!-- 閉じる -->
+      <button onclick="closeModal('modal1')" aria-label="閉じる"
+              class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- modal2（同様の構造。画像・テキストは適宜差し替えてください） -->
+  <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal2')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">Sambaファイル共有環境構成</h2>
+        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
+      </div>
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center">
+              <img src="samba1.png" class="w-full h-64 object-contain rounded-md" />
+            </div>
+            <div class="swiper-slide flex items-center justify-center">
+              <img src="samba2.png" class="w-full h-64 object-contain rounded-md" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+      <button onclick="closeModal('modal2')" aria-label="閉じる"
+              class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- modal3 -->
+  <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+       onclick="closeModal('modal3')">
+    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
+         onclick="event.stopPropagation()">
+      <div class="md:w-1/2 md:pr-12">
+        <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ</h2>
+        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
+      </div>
+      <div class="md:w-1/2">
+        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide flex items-center justify-center"><img src="spam1.png" class="w-full h-64 object-contain rounded-md" /></div>
+            <div class="swiper-slide flex items-center justify-center"><img src="spam2.png" class="w-full h-64 object-contain rounded-md" /></div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination mt-3"></div>
+        </div>
+      </div>
+      <button onclick="closeModal('modal3')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+    </div>
+  </div>
+
+  <!-- modal4, modal5, modal6 も同様に追加可能 -->
+  <!-- （必要ならここに modal4/modal5/modal6 を追加） -->
+
+  <!-- Contact -->
+  <section id="contact" class="min-h-screen pt-20 flex flex-col justify-center items-center text-center bg-indigo-600 text-white">
     <h2 class="text-3xl font-bold mb-8">お問い合わせ</h2>
     <p>ご連絡は <a href="mailto:you@example.com" class="underline">you@example.com</a> まで</p>
   </section>
 
-  
-  </script>
-
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- モーダル制御 & Swiper 初期化 -->
   <script>
-  function openModal(id) {
-    document.getElementById(id).classList.remove('hidden');
-  }
-  function closeModal(id) {
-    document.getElementById(id).classList.add('hidden');
-  }
+    function openModal(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.classList.remove('hidden');
+      el.classList.add('flex');
+      // スクロール禁止（任意）
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.classList.add('hidden');
+      el.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // DOMロード後に全ての swiper を初期化（モーダル内のスライダーを個別に初期化）
     document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.swiper', {
-      loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      document.querySelectorAll('.swiper').forEach((container) => {
+        // each container の中のボタン/ページネーション要素を参照して初期化する
+        new Swiper(container, {
+          loop: true,
+          slidesPerView: 1,
+          spaceBetween: 10,
+          pagination: {
+            el: container.querySelector('.swiper-pagination'),
+            clickable: true,
+          },
+          navigation: {
+            nextEl: container.querySelector('.swiper-button-next'),
+            prevEl: container.querySelector('.swiper-button-prev'),
+          },
+        });
+      });
     });
   </script>
-    
-<!-- Swiper CSS & JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
 </body>
-  
 </html>
