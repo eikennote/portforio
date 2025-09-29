@@ -49,77 +49,108 @@
   <h2 class="text-3xl font-bold mb-8">Works</h2>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-10 max-w-6xl mx-auto px-4">
-    <!-- カード1 -->
-    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal1')">
-      <img src="prometheus.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">監視環境構築</h3>
-      <p class="text-sm text-gray-300">Prometheus + Gragana + AlertManager</p>
-    </div>
-    
-  <div id="modal1"
-     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-  <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
-    
-    <!-- 左：テキスト -->
-    <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
-      <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
-      <p class="text-gray-700 leading-relaxed">
-        Prometheus + Grafana + AlertManager を使った監視環境の構成図とセットアップ手順をまとめています。
-      </p>
-    </div>
 
-    <!-- 右：画像スライダー -->
-    <div class="md:w-1/2">
-      <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="image1.png" class="w-full h-auto rounded-lg" />
-          </div>
-          <div class="swiper-slide">
-            <img src="image2.png" class="w-full h-auto rounded-lg" />
-          </div>
-          <div class="swiper-slide">
-            <img src="image3.png" class="w-full h-auto rounded-lg" />
+    <!-- ===== カード1 ===== -->
+    <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal1')">
+      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
+      <h3 class="text-xl font-semibold">監視環境構築</h3>
+      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
+    </div>
+    <!-- モーダル1 -->
+    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
+        <!-- 左テキスト -->
+        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
+          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
+          </p>
+        </div>
+        <!-- 右スライダー -->
+        <div class="md:w-1/2">
+          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
+            </div>
+            <div class="swiper-button-next text-gray-600"></div>
+            <div class="swiper-button-prev text-gray-600"></div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
-        <!-- スライド操作ボタン -->
-        <div class="swiper-button-next text-gray-600"></div>
-        <div class="swiper-button-prev text-gray-600"></div>
-        <div class="swiper-pagination"></div>
+        <button onclick="closeModal('modal1')"
+          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
       </div>
     </div>
 
     
-    <!-- カード2 -->
+    <!-- ===== カード2 ===== -->
     <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal2')">
-      <img src="samba.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">Sambaファイル共有環境構成</h3>
-      <p class="text-sm text-gray-300">OpenVPN + Samba</p>
+      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
+      <h3 class="text-xl font-semibold">監視環境構築</h3>
+      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
     </div>
-
+    <!-- モーダル2 -->
     <div id="modal2" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">ここに詳細テキスト</p>
-        <img src="samba.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
+        <!-- 左テキスト -->
+        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
+          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
+          </p>
+        </div>
+        <!-- 右スライダー -->
+        <div class="md:w-1/2">
+          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
+            </div>
+            <div class="swiper-button-next text-gray-600"></div>
+            <div class="swiper-button-prev text-gray-600"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <button onclick="closeModal('modal2')"
+          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
       </div>
     </div>
 
     
-    <!-- カード3 -->
+    <!-- ===== カード3 ===== -->
     <div class="bg-slate-800 p-4 rounded-lg shadow-lg cursor-pointer hover:opacity-90" onclick="openModal('modal3')">
-      <img src="spam_phonebook.png" alt="ポートフォリオ トップ画像" class="rounded-md mb-4 w-full h-48 object-cover" />
-      <h3 class="text-xl font-semibold">迷惑電話番号収集アプリ</h3>
-      <p class="text-sm text-gray-300">Rails + PosrgreSQL</p>
+      <img src="prometheus.png" class="rounded-md mb-4 w-full h-48 object-cover" />
+      <h3 class="text-xl font-semibold">監視環境構築</h3>
+      <p class="text-sm text-gray-300">Prometheus + Grafana + AlertManager</p>
     </div>
-    
+    <!-- モーダル3 -->
     <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative">
-        <h2 class="text-2xl font-bold mb-4">監視環境構築</h2>
-        <p class="text-gray-700 mb-4">ここに詳細テキスト</p>
-        <img src="spam_phonebook.png" class="rounded-md mb-4 mx-auto" />
-        <button onclick="closeModal('modal1')" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
+      <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row">
+        <!-- 左テキスト -->
+        <div class="md:w-1/2 md:pr-10 mb-8 md:mb-0">
+          <h2 class="text-2xl font-bold mb-6">監視環境構築</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Prometheus + Grafana + AlertManager の構成図と手順をまとめています。
+          </p>
+        </div>
+        <!-- 右スライダー -->
+        <div class="md:w-1/2">
+          <div class="swiper border-4 border-gray-300 rounded-lg shadow-md">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="image1.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image2.png" class="w-full h-auto rounded-lg" /></div>
+              <div class="swiper-slide"><img src="image3.png" class="w-full h-auto rounded-lg" /></div>
+            </div>
+            <div class="swiper-button-next text-gray-600"></div>
+            <div class="swiper-button-prev text-gray-600"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <button onclick="closeModal('modal3')"
+          class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl">&times;</button>
       </div>
     </div>
 
