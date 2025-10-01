@@ -111,7 +111,12 @@
       <div class="md:w-1/2 md:pr-12">
         <h2 class="text-2xl font-bold mb-4 text-slate-900">監視環境構築</h2>
         <p class="text-gray-700 mb-4 leading-relaxed">
-          Prometheus + Grafana + AlertManager を使った監視環境の構成です。ここに詳細説明を書きます。必要ならセットアップ手順やポイントを列挙してください。
+          Prometheus を用いた監視環境を構築し、サーバーの稼働状況を可視化しました。
+          さらに、異常を検知した際には Alertmanager を通じてアラートを通知する仕組みも実装しました。
+          環境 : AWS EC2, Docker
+          使用裏リソース : Prometheus, Grafana, AlertManager, Slack
+          Zennの記事に作業記録を残しています。
+          https://zenn.dev/eiken/books/21a8c94412da31
         </p>
         <ul class="text-sm text-gray-600 list-disc pl-5">
           <li>メトリクス収集：node_exporter 等</li>
