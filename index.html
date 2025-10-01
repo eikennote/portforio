@@ -111,9 +111,10 @@
       <div class="md:w-1/2 md:pr-12">
         <h2 class="text-2xl font-bold mb-4 text-slate-900">監視環境構築</h2>
         <p class="text-gray-700 mb-4 leading-relaxed">
-          AWS EC2 上に Docker を用いて、Prometheus・Grafana・Alertmanager を組み合わせた監視環境を構築しました。
+          Docker を用いて、Prometheus・Grafana・Alertmanager を組み合わせた監視環境を構築しました。
           サーバーの稼働状況を可視化するだけでなく、異常を検知した際には Slack へ自動通知する仕組みを導入し、
           障害対応のスピード向上に繋げています。
+          監視対象は AWS EC2 サーバーです。
         </p>
         <p class="text-gray-700 mb-4 leading-relaxed">
           設計から実装、可視化ダッシュボードの構築、アラート設定までを一貫して対応し、
@@ -122,7 +123,7 @@
         <a href="https://zenn.dev/eiken/books/21a8c94412da31"
            target="_blank"
            class="text-indigo-600 underline">
-          Zenn 記事はこちら
+          Zenn 記事はこちら（Prometheus + Grafana + AlertManager 監視環境構築）
         </a>
         <ul class="text-sm text-gray-600 list-disc pl-5 mt-4">
           <li>メトリクス収集：node_exporter 等</li>
