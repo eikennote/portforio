@@ -172,29 +172,25 @@
        onclick="event.stopPropagation()">
 
     <!-- 左：テキスト（縦中央揃え） -->
+<!-- 左：テキスト（縦中央揃え） -->
     <div class="md:w-1/2 md:pr-12 flex flex-col justify-center">
-      <h2 class="text-2xl font-bold mb-4 text-slate-900">監視環境構築</h2>
+      <h2 class="text-2xl font-bold mb-4 text-slate-900">安全なファイル共有環境構築</h2>
+    
       <p class="text-gray-700 mb-4 leading-relaxed">
-      AWS 上に OpenVPN・Samba・S3 バックアップを組み合わせた安全なファイル共有環境を構築しました。
-      社内ネットワークのように、外部からプライベートサブネット内のファイルサーバーへ安全にアクセス可能な仕組みを実現しています。
+        AWS 上に OpenVPN・Samba・S3 バックアップを組み合わせ、外部からプライベートサブネット内のファイルサーバーへ安全にアクセス可能な環境を構築しました。
       </p>
-      <p class="text-gray-700 mb-4 leading-relaxed">
-        セキュアアクセスの実現
-        パブリックサブネットの EC2 に OpenVPN を導入し、クライアントからプライベートサブネット内のリソースへ安全に接続できるよう設計しました。証明書の発行には easy-rsa を利用し、堅牢な認証基盤を整備しています。
-
-        オフライン環境でのパッケージ展開
-        セキュリティの観点から Samba サーバーをプライベートサブネットに構築したため、直接インターネットに接続できません。そこで、OpenVPN サーバー経由で必要なパッケージをダウンロード → プライベートサブネットに転送してインストールするフローを設計しました。
-
-        ファイル共有サーバーの構築
-        Samba を導入し、社内利用を想定した共有ディレクトリを作成。アクセス権限を細かく設定し、クライアントからのファイル共有動作を確認しました。
-
-        S3 への定期バックアップ
-        Samba サーバー上のデータを tar アーカイブ化 → S3 へ定期転送 する仕組みを導入。パーミッションや所有者情報を保持したまま効率的にバックアップを行い、冗長性と可用性を確保しました。
-      </p>
+    
+      <ul class="text-gray-700 mb-4 list-disc pl-5 leading-relaxed">
+        <li><strong>セキュアアクセス：</strong>パブリックサブネットの EC2 に OpenVPN を導入し、クライアントから安全に接続可能。証明書は easy-rsa で管理。</li>
+        <li><strong>オフライン環境でのパッケージ展開：</strong>OpenVPN経由で必要パッケージをダウンロード・転送してインストール。</li>
+        <li><strong>ファイル共有：</strong>Sambaで社内用共有ディレクトリを作成し、アクセス権限を細かく設定。</li>
+        <li><strong>S3バックアップ：</strong>Sambaデータを tar アーカイブ化して定期転送。パーミッションや所有者情報を保持。</li>
+      </ul>
+    
       <a href="https://zenn.dev/eiken/books/a50c6a7f65384a"
          target="_blank"
          class="text-indigo-600 underline">
-        Zenn 記事はこちら（OpenVPN + Sambaファイル共有環境 構築）
+        Zenn 記事はこちら（OpenVPN + Samba ファイル共有環境構築）
       </a>
     </div>
 
