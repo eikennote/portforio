@@ -113,27 +113,30 @@
     <!-- 左：テキスト（縦中央揃え） -->
     <div class="md:w-1/2 md:pr-12 flex flex-col justify-center">
       <h2 class="text-2xl font-bold mb-4 text-slate-900">監視環境構築</h2>
+    
       <p class="text-gray-700 mb-4 leading-relaxed">
-        Docker を用いて、Prometheus・Grafana・Alertmanager を組み合わせた監視環境を構築しました。
-        サーバーの稼働状況を可視化するだけでなく、異常を検知した際には Slack へ自動通知する仕組みを導入し、
-        障害対応のスピード向上に繋げています。
-        監視対象は AWS EC2 サーバーです。
+        Docker を使い、Prometheus・Grafana・Alertmanager を組み合わせた監視環境を構築しました。
+        サーバーの稼働状況を可視化するだけでなく、異常発生時には Slack へ自動通知する仕組みも導入しています。
+        対象は AWS EC2 サーバーです。
       </p>
+    
       <p class="text-gray-700 mb-4 leading-relaxed">
-        設計から実装、可視化ダッシュボードの構築、アラート設定までを一貫して対応し、
-        運用に耐えられる仕組みを実現しました。作業の詳細は以下の記事にまとめています。
+        設計から実装、ダッシュボード構築、アラート設定まで一貫して対応し、運用に耐えられる仕組みを実現しました。
       </p>
+    
+      <ul class="text-gray-700 mb-4 list-disc pl-5 leading-relaxed">
+        <li><strong>メトリクス収集：</strong>node_exporter 等を使用</li>
+        <li><strong>可視化：</strong>Grafana ダッシュボード</li>
+        <li><strong>アラート通知：</strong>Alertmanager → Slack 連携</li>
+      </ul>
+    
       <a href="https://zenn.dev/eiken/books/21a8c94412da31"
          target="_blank"
          class="text-indigo-600 underline">
         Zenn 記事はこちら（Prometheus + Grafana + AlertManager 監視環境構築）
       </a>
-      <ul class="text-sm text-gray-600 list-disc pl-5 mt-4">
-        <li>メトリクス収集：node_exporter 等</li>
-        <li>可視化：Grafana ダッシュボード</li>
-        <li>アラート通知：Alertmanager → Slack 連携</li>
-      </ul>
     </div>
+
 
     <!-- 右：画像スライダー（縦中央揃え + 高さ固定） -->
     <div class="md:w-1/2 flex items-center">
