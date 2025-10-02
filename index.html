@@ -227,31 +227,70 @@
   </div>
 </div>
 
-  <!-- modal3 -->
-  <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
-       onclick="closeModal('modal3')">
-    <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
-         onclick="event.stopPropagation()">
-      <div class="md:w-1/2 md:pr-12">
-        <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ</h2>
-        <p class="text-gray-700 leading-relaxed">説明テキスト...</p>
-      </div>
-      <div class="md:w-1/2">
-        <div class="swiper border-4 border-gray-300 rounded-lg shadow-md p-3 bg-white">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide flex items-center justify-center"><img src="spam1.png" class="w-full h-64 object-contain rounded-md" /></div>
-            <div class="swiper-slide flex items-center justify-center"><img src="spam2.png" class="w-full h-64 object-contain rounded-md" /></div>
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination mt-3"></div>
-        </div>
-      </div>
-      <button onclick="closeModal('modal3')" aria-label="閉じる" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
-    </div>
-  </div>
+<!-- modal3（同様の構造。画像・テキストは適宜差し替えてください） -->
+<div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+     onclick="closeModal('modal3')">
 
-  <!-- modal4 -->
+  <div class="bg-white w-full max-w-6xl max-h-[90vh] p-8 rounded-lg shadow-lg relative 
+              flex flex-col md:flex-row gap-8 mx-4 overflow-y-auto"
+       onclick="event.stopPropagation()">
+
+    <!-- 左：テキスト（縦中央揃え） -->
+<!-- 左：テキスト（縦中央揃え） -->
+    <div class="md:w-1/2 md:pr-12 flex flex-col justify-center">
+      <h2 class="text-2xl font-bold mb-4 text-slate-900">安全なファイル共有環境構築</h2>
+    
+      <p class="text-gray-700 mb-4 leading-relaxed">
+        AWS 上に OpenVPN・Samba・S3 バックアップを組み合わせ、外部からプライベートサブネット内のファイルサーバーへ安全にアクセス可能な環境を構築しました。
+      </p>
+    
+      <ul class="text-gray-700 mb-4 list-disc pl-5 leading-relaxed">
+        <li><strong>セキュアアクセス：</strong>パブリックサブネットの EC2 に OpenVPN を導入し、クライアントから安全に接続可能。証明書は easy-rsa で管理。</li>
+        <li><strong>オフライン環境でのパッケージ展開：</strong>OpenVPN経由で必要パッケージをダウンロード・転送してインストール。</li>
+        <li><strong>ファイル共有：</strong>Sambaで社内用共有ディレクトリを作成し、アクセス権限を細かく設定。</li>
+        <li><strong>S3バックアップ：</strong>Sambaデータを tar アーカイブ化して定期転送。パーミッションや所有者情報を保持。</li>
+      </ul>
+    
+      <a href="https://zenn.dev/eiken/books/a50c6a7f65384a"
+         target="_blank"
+         class="text-indigo-600 underline">
+        Zenn 記事はこちら（OpenVPN + Samba ファイル共有環境構築）
+      </a>
+    </div>
+
+    <!-- 右：画像スライダー（縦中央揃え + 高さ固定） -->
+    <div class="md:w-1/2 flex items-center">
+      <div class="swiper border-2 border-gray-300 rounded-lg shadow-md bg-white w-full h-[320px]">
+        <div class="swiper-wrapper h-full">
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="openvpn.png" alt="構成図1" class="max-h-[280px] w-auto object-contain rounded-md" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="samba_mac.png" alt="構成図1" class="max-h-[280px] w-auto object-contain rounded-md" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="samba_windows.png" alt="構成図2" class="max-h-[280px] w-auto object-contain rounded-md" />
+          </div>
+          <div class="swiper-slide flex items-center justify-center">
+            <img src="samba_s3.png" alt="構成図3" class="max-h-[280px] w-auto object-contain rounded-md" />
+          </div>
+        </div>
+        <!-- ナビ・ページネーション -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination mt-2"></div>
+      </div>
+    </div>
+
+    <!-- 閉じる -->
+    <button onclick="closeModal('modal3')" aria-label="閉じる"
+            class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
+  </div>
+</div>
+
+
+
+<!-- modal4 -->
   <div id="modal4" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
        onclick="closeModal('modal4')">
     <div class="bg-white w-full max-w-6xl p-8 rounded-lg shadow-lg relative flex flex-col md:flex-row gap-8 mx-4"
