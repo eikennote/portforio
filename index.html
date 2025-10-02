@@ -102,7 +102,7 @@
 
   </section>
 
-  <!-- 例：modal1 -->
+<!-- 例：modal1 -->
 <div id="modal1" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
      onclick="closeModal('modal1')">
 
@@ -164,6 +164,8 @@
             class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-3xl leading-none">&times;</button>
   </div>
 </div>
+
+
   
 
 <!-- modal2（同様の構造。画像・テキストは適宜差し替えてください） -->
@@ -227,7 +229,10 @@
   </div>
 </div>
 
-<!-- modal3（同様の構造。画像・テキストは適宜差し替えてください） -->
+
+
+  
+<!-- modal3（迷惑電話番号収集アプリ） -->
 <div id="modal3" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
      onclick="closeModal('modal3')">
 
@@ -236,25 +241,26 @@
        onclick="event.stopPropagation()">
 
     <!-- 左：テキスト（縦中央揃え） -->
-<!-- 左：テキスト（縦中央揃え） -->
     <div class="md:w-1/2 md:pr-12 flex flex-col justify-center">
-      <h2 class="text-2xl font-bold mb-4 text-slate-900">安全なファイル共有環境構築</h2>
+      <h2 class="text-2xl font-bold mb-4 text-slate-900">迷惑電話番号収集アプリ（Rails × AWS）</h2>
     
       <p class="text-gray-700 mb-4 leading-relaxed">
-        AWS 上に OpenVPN・Samba・S3 バックアップを組み合わせ、外部からプライベートサブネット内のファイルサーバーへ安全にアクセス可能な環境を構築しました。
+        日常的に増えてきた迷惑電話への対策として、迷惑電話番号を記録・一覧化できる Web アプリを Rails で開発し、AWS 上にデプロイしました。<br>
+        「毎回番号を調べて着信拒否する」という手間を減らすことを目的にしています。
       </p>
     
+      <h3 class="text-lg font-semibold mb-2">🔑 実装ポイント</h3>
       <ul class="text-gray-700 mb-4 list-disc pl-5 leading-relaxed">
-        <li><strong>セキュアアクセス：</strong>パブリックサブネットの EC2 に OpenVPN を導入し、クライアントから安全に接続可能。証明書は easy-rsa で管理。</li>
-        <li><strong>オフライン環境でのパッケージ展開：</strong>OpenVPN経由で必要パッケージをダウンロード・転送してインストール。</li>
-        <li><strong>ファイル共有：</strong>Sambaで社内用共有ディレクトリを作成し、アクセス権限を細かく設定。</li>
-        <li><strong>S3バックアップ：</strong>Sambaデータを tar アーカイブ化して定期転送。パーミッションや所有者情報を保持。</li>
+        <li><strong>基本機能：</strong> ユーザー認証、番号・内容登録、一覧表示、カウント機能</li>
+        <li><strong>アプリ設計：</strong> UserとPhoneNumberの1対多設計、devise認証、ERDでデータモデル可視化</li>
+        <li><strong>AWS運用：</strong> EC2 + RDS(PostgreSQL) + Route 53 + CloudWatch を利用し構築・公開</li>
+        <li><strong>工夫点：</strong> 開発だけでなく運用監視も重視、トラブル対応の記録も残し再利用可能に</li>
       </ul>
     
       <a href="https://zenn.dev/eiken/books/a50c6a7f65384a"
          target="_blank"
          class="text-indigo-600 underline">
-        Zenn 記事はこちら（OpenVPN + Samba ファイル共有環境構築）
+        Zenn 記事はこちら（迷惑電話番号収集アプリ）
       </a>
     </div>
 
@@ -263,16 +269,16 @@
       <div class="swiper border-2 border-gray-300 rounded-lg shadow-md bg-white w-full h-[320px]">
         <div class="swiper-wrapper h-full">
           <div class="swiper-slide flex items-center justify-center">
-            <img src="openvpn.png" alt="構成図1" class="max-h-[280px] w-auto object-contain rounded-md" />
+            <img src="spam_app_top.png" alt="アプリ画面1" class="max-h-[280px] w-auto object-contain rounded-md" />
           </div>
           <div class="swiper-slide flex items-center justify-center">
-            <img src="samba_mac.png" alt="構成図1" class="max-h-[280px] w-auto object-contain rounded-md" />
+            <img src="spam_app_list.png" alt="アプリ画面2" class="max-h-[280px] w-auto object-contain rounded-md" />
           </div>
           <div class="swiper-slide flex items-center justify-center">
-            <img src="samba_windows.png" alt="構成図2" class="max-h-[280px] w-auto object-contain rounded-md" />
+            <img src="spam_app_register.png" alt="アプリ画面3" class="max-h-[280px] w-auto object-contain rounded-md" />
           </div>
           <div class="swiper-slide flex items-center justify-center">
-            <img src="samba_s3.png" alt="構成図3" class="max-h-[280px] w-auto object-contain rounded-md" />
+            <img src="spam_app_aws.png" alt="AWS構成図" class="max-h-[280px] w-auto object-contain rounded-md" />
           </div>
         </div>
         <!-- ナビ・ページネーション -->
